@@ -1,0 +1,11 @@
+from textblob import TextBlob
+file1 = open("check.txt","r+")
+a=file1.read()
+print("Original text :",str(a))
+b = TextBlob(str(a))
+print("\n")
+print("Corrected text :",str(b.correct()))
+file1.close()
+d = open("corrected.txt",'w')
+d.write(str(b.correct()))
+d.close()
